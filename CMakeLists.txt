@@ -21,13 +21,7 @@ message(STATUS "Looking for Qt Tools in: \n\t" ${Qt6CoreTools_DIR} "\n\t" ${Qt6G
 
 find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 
-add_executable(${PROJECT_NAME}
-        src/gui/MainWindow.h
-        src/gui/MainWindow.cpp
-        src/gui/MainWindow.ui
-
-        src/main.cpp
-    )
+add_subdirectory(src)
 
 target_link_libraries(${PROJECT_NAME} 
     PUBLIC
