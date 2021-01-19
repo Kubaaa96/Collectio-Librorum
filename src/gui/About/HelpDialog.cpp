@@ -1,16 +1,16 @@
-#include "SettingsDialog.h"
+#include "HelpDialog.h"
 
-SettingsDialog::SettingsDialog(QWidget* parent):
+HelpDialog::HelpDialog(QWidget* parent):
     QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint)
 {
     initGui();
 }
 
-SettingsDialog::~SettingsDialog()
+HelpDialog::~HelpDialog()
 {
 }
 
-void SettingsDialog::initGui()
+void HelpDialog::initGui()
 {
     setMinimumSize(m_minimumDialogSize);
     resize(m_initialDialogSize);

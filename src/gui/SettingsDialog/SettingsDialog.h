@@ -12,7 +12,9 @@ public:
     ~SettingsDialog() override;
 
 private:
-
+    void initGui();
+    QSize m_minimumDialogSize{ 500, 600 };
+    QSize m_initialDialogSize{ 600, 700 };
 };
 
 #endif // !SETTINGSDIALOG_H

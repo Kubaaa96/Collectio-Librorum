@@ -8,16 +8,19 @@ MainWindow::MainWindow(QWidget* parent)
         | Qt::WindowCloseButtonHint)
     , m_centralWidget(new QWidget(this))
     , m_menuBar(new QMenuBar(m_centralWidget))
-    , m_file(new QMenu("&File"))
-    , m_addBook(new QAction("&Add Book"))
-    , m_addLibrary(new QAction("&Add Library"))
-    , m_addCollection(new QAction("Add Collection"))
-    , m_edit(new QMenu("&Edit"))
-    , m_options(new QMenu("&Options"))
-    , m_settingsDialog(new QAction("&Settings"))
-    , m_about(new QMenu("&About"))
-    , m_aboutDialog(new QAction("&About"))
-    , m_helpDialog(new QAction("&Help"))
+    , m_fileMenu(new QMenu("&File"))
+    , m_addBookAction(new QAction("&Add Book"))
+    , m_addLibraryAction(new QAction("&Add Library"))
+    , m_addCollectionAction(new QAction("Add Collection"))
+    , m_editMenu(new QMenu("&Edit"))
+    , m_optionsMenu(new QMenu("&Options"))
+    , m_settingsAction(new QAction("&Settings"))
+    , m_aboutMenu(new QMenu("&About"))
+    , m_aboutAction(new QAction("&About"))
+    , m_helpAction(new QAction("&Help"))
+    , m_settingsDialog(new SettingsDialog(this))
+    , m_aboutDialog(new AboutDialog(this))
+    , m_helpDialog(new HelpDialog(this))
 {
     initGui();
     connecting();
@@ -25,18 +28,21 @@ MainWindow::MainWindow(QWidget* parent)
 
 MainWindow::~MainWindow()
 {
-    delete m_file;
-    delete m_addBook;
-    delete m_addLibrary;
-    delete m_addCollection;
-    delete m_edit;
-    delete m_options;
-    delete m_settingsDialog;
-    delete m_about;
-    delete m_aboutDialog;
-    delete m_helpDialog;
+    delete m_fileMenu;
+    delete m_addBookAction;
+    delete m_addLibraryAction;
+    delete m_addCollectionAction;
+    delete m_editMenu;
+    delete m_optionsMenu;
+    delete m_settingsAction;
+    delete m_aboutMenu;
+    delete m_aboutAction;
+    delete m_helpAction;
     delete m_menuBar;
     delete m_centralWidget;
+    delete m_settingsDialog;
+    delete m_aboutDialog;
+    delete m_helpDialog;
 }
 
 void MainWindow::addBook()
@@ -57,24 +63,23 @@ void MainWindow::addCollection()
 
 void MainWindow::settings()
 {
-    qDebug("Settings");
+    m_settingsDialog->show();
 }
 
 void MainWindow::about()
 {
-    qDebug("About");
+    m_aboutDialog->show();
 }
 
 void MainWindow::help()
 {
-    qDebug("Help");
+    m_helpDialog->show();
 }
 
 void MainWindow::initGui()
 {
-    setMinimumSize({ 800, 600 });
-    setMaximumSize({ 1920, 1080 });
-    resize(1240, 720);
+    setMinimumSize(m_minimumDialogSize);
+    resize(m_initialDialogSize);
 
     initMenu();
     
@@ -83,28 +88,28 @@ void MainWindow::initGui()
 
 void MainWindow::initMenu()
 {
-    m_file->addAction(m_addBook);
-    m_file->addAction(m_addLibrary);
-    m_file->addAction(m_addCollection);
-    m_menuBar->addMenu(m_file);
+    m_fileMenu->addAction(m_addBookAction);
+    m_fileMenu->addAction(m_addLibraryAction);
+    m_fileMenu->addAction(m_addCollectionAction);
+    m_menuBar->addMenu(m_fileMenu);
 
-    m_menuBar->addMenu(m_edit);
+    m_menuBar->addMenu(m_editMenu);
 
-    m_options->addAction(m_settingsDialog);
-    m_menuBar->addMenu(m_options);
+    m_optionsMenu->addAction(m_settingsAction);
+    m_menuBar->addMenu(m_optionsMenu);
 
-    m_about->addAction(m_aboutDialog);
-    m_about->addAction(m_helpDialog);
-    m_menuBar->addMenu(m_about);
+    m_aboutMenu->addAction(m_aboutAction);
+    m_aboutMenu->addAction(m_helpAction);
+    m_menuBar->addMenu(m_aboutMenu);
 }
 
 void MainWindow::connecting()
 {
-    connect(m_addBook, &QAction::triggered, this, &MainWindow::addBook);
-    connect(m_addLibrary, &QAction::triggered, this, &MainWindow::addLibrary);
-    connect(m_addCollection, &QAction::triggered, this, &MainWindow::addCollection);
+    connect(m_addBookAction, &QAction::triggered, this, &MainWindow::addBook);
+    connect(m_addLibraryAction, &QAction::triggered, this, &MainWindow::addLibrary);
+    connect(m_addCollectionAction, &QAction::triggered, this, &MainWindow::addCollection);
 
-    connect(m_settingsDialog, &QAction::triggered, this, &MainWindow::settings);
-    connect(m_aboutDialog, &QAction::triggered, this, &MainWindow::about);
-    connect(m_helpDialog, &QAction::triggered, this, &MainWindow::help);
+    connect(m_settingsAction, &QAction::triggered, this, &MainWindow::settings);
+    connect(m_aboutAction, &QAction::triggered, this, &MainWindow::about);
+    connect(m_helpAction, &QAction::triggered, this, &MainWindow::help);
 }
