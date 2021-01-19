@@ -11,7 +11,7 @@
 - [Contact](#contact)
 
 ## About Project
-This will be tool for managing your books, by inserting informations about them, and arranging this objects into Groups which can be arranged into Libraries and then Collection. 
+This will be tool for managing your books, by inserting informations about them, and arranging this objects into Groups which can be arranged into Libraries and then Collection. Currently application is in early stage of development. All feedback and ideas as well as contributions are welcome.
 
 ## Building
 
