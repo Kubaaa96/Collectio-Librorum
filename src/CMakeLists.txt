@@ -1,4 +1,4 @@
-set(CLSOURCES
+file(GLOB CLSOURCES
 ${CMAKE_SOURCE_DIR}/src/main.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/MainWindow.h
 ${CMAKE_SOURCE_DIR}/src/gui/MainWindow.cpp
@@ -10,6 +10,6 @@ ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.cpp
 
 )
-add_executable(${PROJECT_NAME}
+add_executable(${PROJECT_NAME} 
     ${CLSOURCES}
-)
+    ${CMAKE_SOURCE_DIR}/res/CollectionLibrorum.qrc)

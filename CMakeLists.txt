@@ -23,6 +23,7 @@ find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 
 add_subdirectory(src)
 
+
 target_link_libraries(${PROJECT_NAME} 
     PUBLIC
     Qt6::Core
