@@ -3,8 +3,8 @@
 AboutDialog::AboutDialog(QWidget* parent)
     : QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint)
     , m_mainLayout(new QVBoxLayout(this))
-    , m_logoLabel(new QLabel(QString("Test")))
-    , m_aboutString(QString("About"))
+    , m_logoLabel(new QLabel())
+    , m_aboutString(QString(tr("About")))
     , m_aboutLabel(new QLabel(m_aboutString))
     
 {
@@ -20,9 +20,11 @@ AboutDialog::~AboutDialog()
 
 void AboutDialog::initGui()
 {
+    setWindowTitle(QString("Collectio Librorum - About"));
     setMinimumSize(m_minimumDialogSize);
     resize(m_initialDialogSize);
-
+    m_logo = QPixmap(":/general/img/logo.png");
+    m_logoLabel->setPixmap(m_logo);
     m_logoLabel->setAlignment(Qt::AlignCenter);
     m_mainLayout->addWidget(m_logoLabel);
     m_aboutLabel->setAlignment(Qt::AlignCenter);

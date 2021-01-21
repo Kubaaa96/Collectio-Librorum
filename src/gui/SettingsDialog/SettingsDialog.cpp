@@ -12,6 +12,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::initGui()
 {
+    setWindowTitle(QString("Collectio Librorum - Settings"));
     setMinimumSize(m_minimumDialogSize);
     resize(m_initialDialogSize);
 }
