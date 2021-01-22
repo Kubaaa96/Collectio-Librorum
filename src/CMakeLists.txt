@@ -8,7 +8,12 @@ ${CMAKE_SOURCE_DIR}/src/gui/About/AboutDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/About/AboutDialog.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.cpp
-
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookDialog.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookDialog.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.cpp
 )
 add_executable(${PROJECT_NAME} 
     ${CLSOURCES}

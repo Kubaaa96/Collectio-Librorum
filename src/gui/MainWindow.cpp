@@ -1,5 +1,8 @@
 #include "MainWindow.h"
 #include <QMenuBar>
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QSizePolicy>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent, Qt::WindowTitleHint
@@ -21,6 +24,13 @@ MainWindow::MainWindow(QWidget* parent)
     , m_settingsDialog(new SettingsDialog(this))
     , m_aboutDialog(new AboutDialog(this))
     , m_helpDialog(new HelpDialog(this))
+    , m_buttonHLayout(new QHBoxLayout(m_centralWidget))
+    , m_addBookButton(new QPushButton("Add Book"))
+    , m_addBookDialog(new AddBookDialog(this))
+    , m_addLibraryButton(new QPushButton("Add Library"))
+    , m_addLibraryDialog(new AddLibraryDialog(this))
+    , m_addCollectionButton(new QPushButton("Add Collection"))
+    , m_addCollectionDialog(new AddCollectionDialog(this))
 {
     initGui();
     connecting();
@@ -39,6 +49,12 @@ MainWindow::~MainWindow()
     delete m_aboutAction;
     delete m_helpAction;
     delete m_menuBar;
+    delete m_addBookButton;
+    delete m_addBookDialog;
+    delete m_addLibraryButton;
+    delete m_addLibraryDialog;
+    delete m_addCollectionButton;
+    delete m_addCollectionDialog;
     delete m_centralWidget;
     delete m_settingsDialog;
     delete m_aboutDialog;
@@ -47,18 +63,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::addBook()
 {
-    qDebug("Add Book");
+    m_addBookDialog->show();
 }
-
 
 void MainWindow::addLibrary()
 {
-    qDebug("Add Library");
+    m_addLibraryDialog->show();
 }
 
 void MainWindow::addCollection()
 {
-    qDebug("Add Collection");
+    m_addCollectionDialog->show();
 }
 
 void MainWindow::settings()
@@ -83,6 +98,8 @@ void MainWindow::initGui()
 
     initMenu();
     
+    initButtons();
+
     setCentralWidget(m_centralWidget);
 }
 
@@ -101,6 +118,17 @@ void MainWindow::initMenu()
     m_aboutMenu->addAction(m_aboutAction);
     m_aboutMenu->addAction(m_helpAction);
     m_menuBar->addMenu(m_aboutMenu);
+    setMenuBar(m_menuBar);
+}
+
+void MainWindow::initButtons()
+{
+    m_addBookButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_addLibraryButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_addCollectionButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_buttonHLayout->addWidget(m_addBookButton);
+    m_buttonHLayout->addWidget(m_addLibraryButton);
+    m_buttonHLayout->addWidget(m_addCollectionButton); 
 }
 
 void MainWindow::connecting()
@@ -112,4 +140,8 @@ void MainWindow::connecting()
     connect(m_settingsAction, &QAction::triggered, this, &MainWindow::settings);
     connect(m_aboutAction, &QAction::triggered, this, &MainWindow::about);
     connect(m_helpAction, &QAction::triggered, this, &MainWindow::help);
+
+    connect(m_addBookButton, &QPushButton::pressed, this, &MainWindow::addBook);
+    connect(m_addLibraryButton, &QPushButton::pressed, this, &MainWindow::addLibrary);
+    connect(m_addCollectionButton, &QPushButton::pressed, this, &MainWindow::addCollection);
 }

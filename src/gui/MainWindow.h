@@ -6,6 +6,9 @@
 #include "SettingsDialog/SettingsDialog.h"
 #include "About/AboutDialog.h"
 #include "About/HelpDialog.h"
+#include "Add/AddBookDialog.h"
+#include "Add/AddLibraryDialog.h"
+#include "Add/AddCollectionDialog.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -52,6 +55,19 @@ private:
     SettingsDialog* m_settingsDialog;
     AboutDialog* m_aboutDialog;
     HelpDialog* m_helpDialog;
+
+    QHBoxLayout* m_buttonHLayout;
+
+    QPushButton* m_addBookButton;
+    AddBookDialog* m_addBookDialog;
+
+    QPushButton* m_addLibraryButton;
+    AddLibraryDialog* m_addLibraryDialog;
+
+    QPushButton* m_addCollectionButton;
+    AddCollectionDialog* m_addCollectionDialog;
+
+    void initButtons();
 
     void connecting();
 
