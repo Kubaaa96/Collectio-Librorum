@@ -17,7 +17,7 @@ public:
     explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
-public slots:
+private slots:
 
     void addBook();
     void addLibrary();

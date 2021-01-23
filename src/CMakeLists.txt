@@ -10,6 +10,12 @@ ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/About/HelpDialog.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookDialog.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookTab.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookTab.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookISBNTab.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookISBNTab.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookPhotoTab.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddBookPhotoTab.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.h

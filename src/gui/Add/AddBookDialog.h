@@ -15,7 +15,12 @@ public:
     explicit AddBookDialog(QWidget* parent = nullptr);
     ~AddBookDialog() override;
 
+private slots:
+    void add();
+    void cancel();
+
 private:
+    void connecting();
     void initGui();
 
     void initLayouts();

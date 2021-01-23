@@ -36,6 +36,7 @@ AddBookDialog::AddBookDialog(QWidget* parent)
     , m_cancelButton(new QPushButton(QString("Cancel")))
 {
     initGui();
+    connecting();
 }
 
 AddBookDialog::~AddBookDialog()
@@ -70,9 +71,27 @@ AddBookDialog::~AddBookDialog()
     delete m_mainVLayout;
 }
 
+void AddBookDialog::add()
+{
+    qDebug("Add Book");
+}
+
+void AddBookDialog::cancel()
+{
+    qDebug("Cancel");
+}
+
+void AddBookDialog::connecting()
+{
+    connect(m_addButton, &QPushButton::pressed, this, &AddBookDialog::add);
+    connect(m_cancelButton, &QPushButton::pressed, this, &AddBookDialog::cancel);
+}
+
 void AddBookDialog::initGui()
 {
-    // TODO Adjust size of window
+    resize({300, 500});
+    setMinimumSize({ 250, 400 });
+    setMaximumSize({ 500, 700 });
     // TODO set max and min size of window
     // TODO adjust size of LineEdits
     initLayouts();
