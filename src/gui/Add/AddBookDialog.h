@@ -7,6 +7,11 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QTabWidget>
+
+#include "AddBookTab.h"
+#include "AddBookISBNTab.h"
+#include "AddBookPhotoTab.h"
 
 class AddBookDialog : public QDialog
 {
@@ -23,58 +28,12 @@ private:
     void connecting();
     void initGui();
 
-    void initLayouts();
-
     QVBoxLayout* m_mainVLayout;
 
-    void initTitle();
-    QHBoxLayout* m_titleHLayout;
-    QLabel* m_titleLabel;
-    QLineEdit* m_titleLineEdit;
-
-    void initAuthors();
-    QHBoxLayout* m_authorsHLayout;
-    QLabel* m_authorsLabel;
-    QLineEdit* m_authorsLineEdit;
-
-    void initPublisher();
-    QHBoxLayout* m_publisherHLayout;
-    QLabel* m_publisherLabel;
-    QLineEdit* m_publisherLineEdit;
-
-    void initDate();
-    QHBoxLayout* m_dateHLayout;
-    QLabel* m_dateLabel;
-    QLineEdit* m_dateLineEdit;
-
-    void initVersion();
-    QHBoxLayout* m_versionHLayout;
-    QLabel* m_versionLabel;
-    QLineEdit* m_versionLineEdit;
-
-    void initGenre();
-    QHBoxLayout* m_genreHLayout;
-    QLabel* m_genreLabel;
-    QLineEdit* m_genreLineEdit;
-
-    void initISBN();
-    QHBoxLayout* m_ISBNHLayout;
-    QLabel* m_ISBNLabel;
-    QLineEdit* m_ISBNLineEdit;
-
-    void initLanguage();
-    QHBoxLayout* m_languageHLayout;
-    QLabel* m_languageLabel;
-    QLineEdit* m_languageLineEdit;
-
-    // Notes
-
-    void initPages();
-    QHBoxLayout* m_pagesHLayout;
-    QLabel* m_pagesLabel;
-    QLineEdit* m_pagesLinetEdit;
-
-    // State
+    QTabWidget* m_tabWidget;
+    AddBookTab* m_addBookTab;
+    AddBookISBNTab* m_addBookISBNTab;
+    AddBookPhotoTab* m_addBookPhotoTab;
 
     void initButtons();
     QHBoxLayout* m_buttonsHLayout;
