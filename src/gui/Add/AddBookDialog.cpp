@@ -49,7 +49,7 @@ void AddBookDialog::initGui()
     resize(m_currentSize);
     setMinimumSize(m_minimumSize);
     setMaximumSize(m_maximumSize);
-    setWindowTitle("Collectio Librorum - Add Book");
+    setWindowTitle(tr("Collectio Librorum - Add Book"));
     // TODO set max and min size of window
     // TODO adjust size of LineEdits
     m_tabWidget->addTab(m_addBookTab, tr("Add Book"));

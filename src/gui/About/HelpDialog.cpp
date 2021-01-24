@@ -4,7 +4,7 @@ HelpDialog::HelpDialog(QWidget* parent):
     QDialog(parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint)
     , m_mainLayout(new QVBoxLayout(this))
     , m_logoLabel(new QLabel())
-    , m_helpString(QString("Help"))
+    , m_helpString(QString(tr("Help")))
     , m_helpLabel(new QLabel(m_helpString))
 {
     initGui();
