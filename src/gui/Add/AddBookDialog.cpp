@@ -46,9 +46,9 @@ void AddBookDialog::connecting()
 
 void AddBookDialog::initGui()
 {
-    resize({300, 500});
-    setMinimumSize({ 250, 400 });
-    setMaximumSize({ 500, 700 });
+    resize(m_currentSize);
+    setMinimumSize(m_minimumSize);
+    setMaximumSize(m_maximumSize);
     setWindowTitle("Collectio Librorum - Add Book");
     // TODO set max and min size of window
     // TODO adjust size of LineEdits

@@ -39,6 +39,10 @@ private:
     QHBoxLayout* m_buttonsHLayout;
     QPushButton* m_addButton;
     QPushButton* m_cancelButton;
+    QSize m_currentSize{ 450, 500 };
+    QSize m_minimumSize{ 400, 400 };
+    QSize m_maximumSize{ 500, 700 };
+    
 };
 
 #endif //!ADDBOOKDIALOG_H

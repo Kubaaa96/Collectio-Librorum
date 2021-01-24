@@ -68,6 +68,11 @@ private:
     QLineEdit* m_pagesLinetEdit;
 
     // State
+
+    std::size_t m_stretchFactorOfLabel{ 1 };
+    std::size_t m_stretchFactorOfLineEdit{ 3 };
+
+    void initSingleRow(QBoxLayout* layout, QLabel* label, QLineEdit* lineEdit);
 };
 
 #endif //!ADDBOOKTAB_H

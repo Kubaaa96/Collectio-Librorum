@@ -28,7 +28,7 @@ AddBookTab::AddBookTab(QWidget *parent)
     , m_languageLabel(new QLabel(tr("Language")))
     , m_languageLineEdit(new QLineEdit())
     , m_pagesHLayout(new QHBoxLayout())
-    , m_pagesLabel(new QLabel(tr("Number of pages")))
+    , m_pagesLabel(new QLabel(tr("Number of \npages")))
     , m_pagesLinetEdit(new QLineEdit())
 {
     initGui();
@@ -94,54 +94,55 @@ void AddBookTab::initLayouts()
 
 void AddBookTab::initTitle()
 {
-    m_titleHLayout->addWidget(m_titleLabel);
-    m_titleHLayout->addWidget(m_titleLineEdit);
+    initSingleRow(m_titleHLayout, m_titleLabel, m_titleLineEdit);
 }
 
 void AddBookTab::initAuthors()
 {
-    m_authorsHLayout->addWidget(m_authorsLabel);
-    m_authorsHLayout->addWidget(m_authorsLineEdit);
+    initSingleRow(m_authorsHLayout, m_authorsLabel, m_authorsLineEdit);
 }
 
 void AddBookTab::initPublisher()
 {
-    m_publisherHLayout->addWidget(m_publisherLabel);
-    m_publisherHLayout->addWidget(m_publisherLineEdit);
+    initSingleRow(m_publisherHLayout, m_publisherLabel, m_publisherLineEdit);
 }
 
 void AddBookTab::initDate()
 {
-    m_dateHLayout->addWidget(m_dateLabel);
-    m_dateHLayout->addWidget(m_dateLineEdit);
+    initSingleRow(m_dateHLayout, m_dateLabel, m_dateLineEdit);
 }
 
 void AddBookTab::initVersion()
 {
-    m_versionHLayout->addWidget(m_versionLabel);
-    m_versionHLayout->addWidget(m_versionLineEdit);
+    initSingleRow(m_versionHLayout, m_versionLabel, m_versionLineEdit);
 }
 
 void AddBookTab::initGenre()
 {
-    m_genreHLayout->addWidget(m_genreLabel);
-    m_genreHLayout->addWidget(m_genreLineEdit);
+    initSingleRow(m_genreHLayout, m_genreLabel, m_genreLineEdit);
 }
 
 void AddBookTab::initISBN()
 {
-    m_ISBNHLayout->addWidget(m_ISBNLabel);
-    m_ISBNHLayout->addWidget(m_ISBNLineEdit);
+    initSingleRow(m_ISBNHLayout, m_ISBNLabel, m_ISBNLineEdit);
 }
 
 void AddBookTab::initLanguage()
 {
-    m_languageHLayout->addWidget(m_languageLabel);
-    m_languageHLayout->addWidget(m_languageLineEdit);
+    initSingleRow(m_languageHLayout, m_languageLabel, m_languageLineEdit);
 }
 
 void AddBookTab::initPages()
 {
-    m_pagesHLayout->addWidget(m_pagesLabel);
-    m_pagesHLayout->addWidget(m_pagesLinetEdit);
+    initSingleRow(m_pagesHLayout, m_pagesLabel, m_pagesLinetEdit);
 }
+
+void AddBookTab::initSingleRow(QBoxLayout* layout, QLabel* label, QLineEdit* lineEdit)
+{
+    label->setAlignment(Qt::AlignCenter);
+    layout->addWidget(label);
+    layout->addWidget(lineEdit);
+    layout->setStretchFactor(label, m_stretchFactorOfLabel);
+    layout->setStretchFactor(lineEdit, m_stretchFactorOfLineEdit);
+}
+
