@@ -2,14 +2,17 @@
 #define ADDBOOKISBNTAB_H
 
 #include <QWidget>
+#include "AddTab.h"
 
-class AddBookISBNTab : public QWidget
+class AddBookISBNTab : public AddTab
 {
     Q_OBJECT
 public:
+
     explicit AddBookISBNTab(QWidget* parent = nullptr);
-    ~AddBookISBNTab() override;
+
 private:
+    void initGui();
 
 };
 #endif //!ADDBOOKISBNTAB_H

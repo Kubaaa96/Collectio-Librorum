@@ -1,12 +1,11 @@
 #include "AddBookISBNTab.h"
 
-AddBookISBNTab::AddBookISBNTab(QWidget *parent)
-    : QWidget(parent)
+AddBookISBNTab::AddBookISBNTab(QWidget* parent)
+    : AddTab(parent)
 {
-    
+    initGui();
 }
 
-AddBookISBNTab::~AddBookISBNTab()
+void AddBookISBNTab::initGui()
 {
-
 }

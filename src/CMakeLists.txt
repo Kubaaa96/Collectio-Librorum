@@ -20,6 +20,8 @@ ${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddLibraryDialog.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.cpp
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddTab.h
+${CMAKE_SOURCE_DIR}/src/gui/Add/AddTab.cpp
 )
 add_executable(${PROJECT_NAME} 
     ${CLSOURCES}
