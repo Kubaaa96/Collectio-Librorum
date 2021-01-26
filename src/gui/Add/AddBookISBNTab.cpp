@@ -39,6 +39,7 @@ void AddBookISBNTab::initGui()
 void AddBookISBNTab::initLayouts()
 {
     m_mainVLayout->addWidget(m_isbnLabel);
+    m_isbnLabel->setAlignment(Qt::AlignCenter);
     m_mainVLayout->addLayout(m_isbnHLayout);
     AddTab::initLayouts();
 }
@@ -46,28 +47,85 @@ void AddBookISBNTab::initLayouts()
 void AddBookISBNTab::initSingleRow(QBoxLayout* layout, QLabel* nameOflabel, QLabel* loadedLabel, QLineEdit* lineEdit, QToolButton* toolButton)
 {
     layout->addWidget(nameOflabel);
+    nameOflabel->setAlignment(Qt::AlignCenter);
     layout->addWidget(loadedLabel);
     lineEdit->hide();
     layout->addWidget(lineEdit);
     layout->addWidget(toolButton);
+    layout->setStretchFactor(nameOflabel, m_stretchFactorOfLabel);
+    layout->setStretchFactor(loadedLabel, m_stretchFactorOfLineEditLoadedLabel);
+    layout->setStretchFactor(lineEdit, m_stretchFactorOfLineEditLoadedLabel);
 }
 
 void AddBookISBNTab::editTitle()
 {
-    if (!m_titleLineEdit->isVisible())
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedTitleLabel, m_titleLineEdit);
+}
+
+void AddBookISBNTab::editAuthors()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedAuthorsLabel, m_authorsLineEdit);
+}
+
+void AddBookISBNTab::editPublisher()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedPublisherLabel, m_publisherLineEdit);
+}
+
+void AddBookISBNTab::editDate()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedDateLabel, m_dateLineEdit);
+}
+
+void AddBookISBNTab::editVersion()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedVersionLabel, m_versionLineEdit);
+}
+
+void AddBookISBNTab::editGenre()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedGenreLabel, m_genreLineEdit);
+}
+
+void AddBookISBNTab::editISBN()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedISBNLabel, m_ISBNLineEdit);
+}
+
+void AddBookISBNTab::editLanguage()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedLanguageLabel, m_languageLineEdit);
+}
+
+void AddBookISBNTab::editPages()
+{
+    changeVisibilityOfLoadedLabelAndLineEdit(m_loadedPagesLabel, m_pagesLineEdit);
+}
+
+void AddBookISBNTab::changeVisibilityOfLoadedLabelAndLineEdit(QLabel* loadedLabel, QLineEdit* lineEdit)
+{
+    if (!lineEdit->isVisible())
     {
-        m_loadedTitleLabel->hide();
-        m_titleLineEdit->show();
+        loadedLabel->hide();
+        lineEdit->show();
     }
     else
     {
-        m_titleLineEdit->hide();
-        m_loadedTitleLabel->show();
+        lineEdit->hide();
+        loadedLabel->show();
     }
-    
 }
 
 void AddBookISBNTab::connecting()
 {
     connect(m_titleToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editTitle);
+    connect(m_authorsToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editAuthors);
+    connect(m_publisherToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editPublisher);
+    connect(m_dateToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editDate);
+    connect(m_versionToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editVersion);
+    connect(m_genreToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editGenre);
+    connect(m_ISBNToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editISBN);
+    connect(m_languageToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editLanguage);
+    connect(m_pagesToolButton, &QToolButton::pressed, this, &AddBookISBNTab::editPages);
+
 }
