@@ -43,51 +43,63 @@
     </message>
 </context>
 <context>
-    <name>AddBookTab</name>
+    <name>AddBookISBNTab</name>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="7"/>
+        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="5"/>
+        <source>Insert ISBN code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="8"/>
+        <source>Load book</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddTab</name>
+    <message>
+        <location filename="../src/gui/Add/AddTab.cpp" line="8"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="10"/>
+        <location filename="../src/gui/Add/AddTab.cpp" line="13"/>
         <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="13"/>
+        <location filename="../src/gui/Add/AddTab.cpp" line="18"/>
         <source>Publisher</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="16"/>
-        <source>Release date</source>
+        <location filename="../src/gui/Add/AddTab.cpp" line="23"/>
+        <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="19"/>
+        <location filename="../src/gui/Add/AddTab.cpp" line="28"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="22"/>
+        <location filename="../src/gui/Add/AddTab.cpp" line="33"/>
         <source>Genre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="25"/>
-        <source>I.S.B.N.</source>
+        <location filename="../src/gui/Add/AddTab.cpp" line="38"/>
+        <source>ISBN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="28"/>
+        <location filename="../src/gui/Add/AddTab.cpp" line="43"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookTab.cpp" line="31"/>
-        <source>Number of 
-pages</source>
+        <location filename="../src/gui/Add/AddTab.cpp" line="48"/>
+        <source>Pages</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

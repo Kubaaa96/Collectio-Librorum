@@ -12,13 +12,14 @@ class AddTab : public QWidget
     Q_OBJECT
 public:
     explicit AddTab(QWidget* parent = nullptr);
-    ~AddTab() override;
+    virtual ~AddTab() override;
 
 protected:
 
+    void initLayouts();
+
     QVBoxLayout* m_mainVLayout;
-    QLabel* m_isbnLabel;
-    QLineEdit* m_isbnLineEdit;
+
 
     QHBoxLayout* m_titleHLayout;
     QLabel* m_titleLabel;

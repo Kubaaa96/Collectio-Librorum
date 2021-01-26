@@ -3,8 +3,7 @@
 AddTab::AddTab(QWidget *parent)
     : QWidget(parent)
     , m_mainVLayout(new QVBoxLayout(this))
-    , m_isbnLabel(new QLabel(tr("Insert ISBN code")))
-    , m_isbnLineEdit(new QLineEdit())
+
     , m_titleHLayout(new QHBoxLayout())
     , m_titleLabel(new QLabel(tr("Title")))
     , m_loadedTitleLabel(new QLabel())
@@ -56,9 +55,6 @@ AddTab::AddTab(QWidget *parent)
 
 AddTab::~AddTab()
 {
-    delete m_isbnLabel;
-    delete m_isbnLineEdit;
-
     delete m_titleLabel;
     delete m_loadedTitleLabel;
     delete m_titleLineEdit;
@@ -114,4 +110,17 @@ AddTab::~AddTab()
     delete m_pagesHLayout;
 
     delete m_mainVLayout;
+}
+
+void AddTab::initLayouts()
+{
+    m_mainVLayout->addLayout(m_titleHLayout);
+    m_mainVLayout->addLayout(m_authorsHLayout);
+    m_mainVLayout->addLayout(m_publisherHLayout);
+    m_mainVLayout->addLayout(m_dateHLayout);
+    m_mainVLayout->addLayout(m_versionHLayout);
+    m_mainVLayout->addLayout(m_genreHLayout);
+    m_mainVLayout->addLayout(m_ISBNHLayout);
+    m_mainVLayout->addLayout(m_languageHLayout);
+    m_mainVLayout->addLayout(m_pagesHLayout);
 }
