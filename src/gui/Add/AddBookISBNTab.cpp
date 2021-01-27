@@ -1,4 +1,5 @@
 #include "AddBookISBNTab.h"
+#include <iostream>
 
 AddBookISBNTab::AddBookISBNTab(QWidget* parent)
     : AddTab(parent)
@@ -16,14 +17,18 @@ AddBookISBNTab::~AddBookISBNTab()
     delete m_isbnLabel;
     delete m_isbnLineEdit;
     delete m_loadISBNPushButton;
+    delete m_isbnHLayout;
 }
 
 void AddBookISBNTab::initGui()
-{
-    initLayouts();
-    
+{  
+    m_mainVLayout->addWidget(m_isbnLabel);
+    m_isbnLabel->setAlignment(Qt::AlignCenter);
+
     m_isbnHLayout->addWidget(m_isbnLineEdit);
     m_isbnHLayout->addWidget(m_loadISBNPushButton);
+
+    initLayouts();
 
     initSingleRow(m_titleHLayout, m_titleLabel, m_loadedTitleLabel, m_titleLineEdit, m_titleToolButton);
     initSingleRow(m_authorsHLayout, m_authorsLabel, m_loadedAuthorsLabel, m_authorsLineEdit, m_authorsToolButton);
@@ -34,13 +39,15 @@ void AddBookISBNTab::initGui()
     initSingleRow(m_ISBNHLayout, m_ISBNLabel, m_loadedISBNLabel, m_ISBNLineEdit, m_ISBNToolButton);
     initSingleRow(m_languageHLayout, m_languageLabel, m_loadedLanguageLabel, m_languageLineEdit, m_languageToolButton);
     initSingleRow(m_pagesHLayout, m_pagesLabel, m_loadedPagesLabel, m_pagesLineEdit, m_pagesToolButton);
+
+    m_mainVLayout->setStretchFactor(m_isbnLabel, 2);
+    m_mainVLayout->setStretchFactor(m_isbnHLayout, 2);
 }
 
 void AddBookISBNTab::initLayouts()
 {
-    m_mainVLayout->addWidget(m_isbnLabel);
-    m_isbnLabel->setAlignment(Qt::AlignCenter);
     m_mainVLayout->addLayout(m_isbnHLayout);
+
     AddTab::initLayouts();
 }
 

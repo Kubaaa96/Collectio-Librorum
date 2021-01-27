@@ -20,12 +20,13 @@ protected:
 
     QVBoxLayout* m_mainVLayout;
 
-
     QHBoxLayout* m_titleHLayout;
     QLabel* m_titleLabel;
     QLabel* m_loadedTitleLabel;
     QLineEdit* m_titleLineEdit;
     QToolButton* m_titleToolButton;
+
+    // Cover
 
     QHBoxLayout* m_authorsHLayout;
     QLabel* m_authorsLabel;
@@ -69,10 +70,18 @@ protected:
     QLineEdit* m_languageLineEdit;
     QToolButton* m_languageToolButton;
 
+    // Notes
+
     QHBoxLayout* m_pagesHLayout;
     QLabel* m_pagesLabel;
     QLabel* m_loadedPagesLabel;
     QLineEdit* m_pagesLineEdit;
     QToolButton* m_pagesToolButton;
+
+    // State
+
+    // Path in Computer
+
+    // WWW path for example amazon
 };
 #endif //!ADDTAB_H

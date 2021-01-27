@@ -28,8 +28,9 @@ private:
     void initGui();
     void initLayouts();
 
-    QHBoxLayout* m_isbnHLayout;
     QLabel* m_isbnLabel;
+
+    QHBoxLayout* m_isbnHLayout;
     QLineEdit* m_isbnLineEdit;
     QPushButton* m_loadISBNPushButton;
 
