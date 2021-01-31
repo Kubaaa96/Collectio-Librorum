@@ -45,13 +45,59 @@
 <context>
     <name>AddBookISBNTab</name>
     <message>
-        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="5"/>
+        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="6"/>
         <source>Insert ISBN code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="8"/>
+        <location filename="../src/gui/Add/AddBookISBNTab.cpp" line="9"/>
         <source>Load book</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddCollectionDialog</name>
+    <message>
+        <location filename="../src/gui/Add/AddCollectionDialog.cpp" line="7"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddCollectionDialog.cpp" line="10"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddCollectionDialog.cpp" line="11"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddCollectionDialog.cpp" line="29"/>
+        <source>CollectioL Librorum - Add Collection</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddLibraryDialog</name>
+    <message>
+        <location filename="../src/gui/Add/AddLibraryDialog.cpp" line="7"/>
+        <source>Library Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddLibraryDialog.cpp" line="10"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddLibraryDialog.cpp" line="11"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gui/Add/AddLibraryDialog.cpp" line="29"/>
+        <source>CollectioL Librorum - Add Library</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

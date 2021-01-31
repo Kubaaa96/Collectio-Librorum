@@ -6,6 +6,7 @@ AddLibraryDialog::AddLibraryDialog(QWidget* parent)
     , m_libraryNameHLayout(new QHBoxLayout())
     , m_libraryNameLabel(new QLabel(tr("Library Name")))
     , m_libraryNameLineEdit(new QLineEdit())
+    , m_descriptionTextEdit(new QTextEdit())
     , m_buttonsHLayout(new QHBoxLayout())
     , m_addLibraryButton(new QPushButton(tr("Add")))
     , m_cancelLibraryButton(new QPushButton(tr("Cancel")))
@@ -18,6 +19,7 @@ AddLibraryDialog::~AddLibraryDialog()
     delete m_cancelLibraryButton;
     delete m_addLibraryButton;
     delete m_buttonsHLayout;
+    delete m_descriptionTextEdit;
     delete m_libraryNameLineEdit;
     delete m_libraryNameLabel;
     delete m_libraryNameHLayout;
@@ -26,7 +28,7 @@ AddLibraryDialog::~AddLibraryDialog()
 
 void AddLibraryDialog::initGui()
 {
-    setWindowTitle("CollectioL Librorum - Add Library");
+    setWindowTitle(tr("CollectioL Librorum - Add Library"));
     resize(m_currentSize);
     setMinimumSize(m_minimumSize);
     setMaximumSize(m_maximumSize);
@@ -42,6 +44,8 @@ void AddLibraryDialog::initGui()
 
 void AddLibraryDialog::initLayouts()
 {
+
     m_mainLayout->addLayout(m_libraryNameHLayout);
+    m_mainLayout->addWidget(m_descriptionTextEdit);
     m_mainLayout->addLayout(m_buttonsHLayout);
 }

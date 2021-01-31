@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QLabel>
 #include <QLineEdit>
+#include <QTextEdit>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -23,7 +24,9 @@ private:
     QHBoxLayout* m_libraryNameHLayout;
     QLabel* m_libraryNameLabel;
     QLineEdit* m_libraryNameLineEdit;
-
+    
+    QTextEdit* m_descriptionTextEdit;
+        
     QHBoxLayout* m_buttonsHLayout;
     QPushButton* m_addLibraryButton;
     QPushButton* m_cancelLibraryButton;
