@@ -28,7 +28,7 @@ AddLibraryDialog::~AddLibraryDialog()
 
 void AddLibraryDialog::initGui()
 {
-    setWindowTitle(tr("CollectioL Librorum - Add Library"));
+    setWindowTitle(tr("Collectio Librorum - Add Library"));
     resize(m_currentSize);
     setMinimumSize(m_minimumSize);
     setMaximumSize(m_maximumSize);

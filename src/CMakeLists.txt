@@ -22,6 +22,14 @@ ${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddCollectionDialog.cpp
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddTab.h
 ${CMAKE_SOURCE_DIR}/src/gui/Add/AddTab.cpp
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/BookHolderWidget.h
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/BookHolderWidget.cpp
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/HolderWidget.h
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/HolderWidget.cpp
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/BookWidget.h
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/BookWidget.cpp
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/LibraryWidget.h
+${CMAKE_SOURCE_DIR}/src/gui/BookHolder/LibraryWidget.cpp
 )
 add_executable(${PROJECT_NAME} 
     ${CLSOURCES}

@@ -15,7 +15,7 @@ This will be tool for managing your books, by inserting informations about them,
 
 ## Building
 
-Building this project requires [Qt 6.0](https://www.qt.io/) to be installed. 
+This project was tested on [Qt 6.0](https://www.qt.io/) version. Previous versions were not tested.
 
 Clone:
 ```
