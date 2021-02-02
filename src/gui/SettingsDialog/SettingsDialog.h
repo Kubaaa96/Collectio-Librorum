@@ -2,6 +2,8 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
+#include "../BookHolder/BookWidget.h"
+#include <QVBoxLayout>
 
 class SettingsDialog : public QDialog
 {
