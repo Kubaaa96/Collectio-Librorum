@@ -11,8 +11,3 @@ BookWidget::~BookWidget()
 {
     
 }
-
-void BookWidget::showText()
-{
-}
-

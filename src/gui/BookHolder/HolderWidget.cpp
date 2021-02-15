@@ -1,7 +1,7 @@
 #include "HolderWidget.h"
 
 HolderWidget::HolderWidget(QWidget* parent)
-    : QWidget(parent)
+    : QScrollArea(parent)
 {
 
 }

@@ -1,9 +1,9 @@
 #ifndef HOLDERWIDGET_H
 #define HOLDERWIDGET_H
 
-#include <QWidget>
+#include <QScrollArea>
 
-class HolderWidget : public QWidget
+class HolderWidget : public QScrollArea
 {
     Q_OBJECT
 public:
